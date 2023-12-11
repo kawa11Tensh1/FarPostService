@@ -2,12 +2,11 @@ from flask import Flask, render_template, request, session, redirect, flash, url
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_
 import os
-from PIL import Image
 from io import BytesIO
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '314'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/versach'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/versach'
 db = SQLAlchemy(app)
 
 class User(db.Model):
